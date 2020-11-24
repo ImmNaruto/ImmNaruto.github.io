@@ -6,7 +6,7 @@
   <link href="http://immnaruto.github.io/atom.xml" rel="self"/>
   
   <link href="http://immnaruto.github.io/"/>
-  <updated>2020-11-24T12:48:54.133Z</updated>
+  <updated>2020-11-24T13:04:01.370Z</updated>
   <id>http://immnaruto.github.io/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="http://immnaruto.github.io/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html"/>
     <id>http://immnaruto.github.io/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html</id>
     <published>2020-11-24T11:43:47.819Z</published>
-    <updated>2020-11-24T12:48:54.133Z</updated>
+    <updated>2020-11-24T13:04:01.370Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;HDU操作系统实验二&quot;&gt;&lt;a href=&quot;#HDU操作系统实验二&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验二&quot;&gt;&lt;/a&gt;HDU操作系统实验二&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;HDU操作系统实验二&quot;&gt;&lt;a href=&quot;#HDU操作系统实验二&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验二&quot;&gt;&lt;/a&gt;HDU操作系统实验二&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot; class=&quot;headerlink&quot; title=&quot;一、实验要求&quot;&gt;&lt;/a&gt;一、实验要求&lt;/h3&gt;&lt;p&gt;1.设计一个模块，要求列出系统中所有内核线程的程序名、PID、进程状态、进程优先级、父进程的PID。&lt;/p&gt;
+&lt;p&gt;2.设计一个带参数的模块，其参数为某个进程的PID号，模块的功能是列出该进程的家族信息，包括父进程、兄弟进程和子进程的程序名、PID号及进程状态。&lt;/p&gt;
+&lt;p&gt;3.进一步分析相关内核函数。&lt;/p&gt;</summary>
     
     
     
