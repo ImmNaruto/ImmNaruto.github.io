@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-21T09:16:53.548Z</updated>
+  <updated>2020-11-24T12:06:17.250Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HDU操作系统实验二</title>
+    <link href="http://example.com/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html"/>
+    <id>http://example.com/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html</id>
+    <published>2020-11-24T11:43:47.819Z</published>
+    <updated>2020-11-24T12:06:17.250Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;HDU操作系统实验二&quot;&gt;&lt;a href=&quot;#HDU操作系统实验二&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验二&quot;&gt;&lt;/a&gt;HDU操作系统实验二&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="HDU" scheme="http://example.com/tags/HDU/"/>
+    
+    <category term="操作系统" scheme="http://example.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>超星跨文化交际题库查漏补缺</title>
