@@ -22,15 +22,14 @@
     <content><![CDATA[<h2 id="ROS小车学习记录"><a href="#ROS小车学习记录" class="headerlink" title="ROS小车学习记录"></a>ROS小车学习记录</h2><h3 id="一、配置与连接"><a href="#一、配置与连接" class="headerlink" title="一、配置与连接"></a>一、配置与连接</h3><h4 id="1-配置VMware虚拟机及ROS-Kinetic-16-04-2"><a href="#1-配置VMware虚拟机及ROS-Kinetic-16-04-2" class="headerlink" title="1.配置VMware虚拟机及ROS Kinetic 16.04.2"></a>1.配置VMware虚拟机及ROS Kinetic 16.04.2</h4><p>a）安装好虚拟机及镜像，虚拟机初始设置为2核4G，设置为4核4G</p>
 <a id="more"></a>
 
-<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo\source_posts\ROS小车学习记录\1606264498962.png"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264498962.png" alt="1606264498962"></p>
 <p>b）设置虚拟机网络模式为桥接模式，用Windows的无线网卡桥接</p>
-<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo\source_posts\ROS小车学习记录\1606264982920.png"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264982920.png" alt="1606264982920"></p>
 <p>c）确认Windows IP地址和虚拟机 IP地址（应在同一网段下）</p>
 <p>以本机为例：</p>
 <p>windows IP：192.108.1.103</p>
 <p>ROS IP：192.108.1.108</p>
-<h4 id="2-树莓派Ubuntu-Mate系统安装"><a href="#2-树莓派Ubuntu-Mate系统安装" class="headerlink" title="2.树莓派Ubuntu Mate系统安装"></a>2.树莓派Ubuntu Mate系统安装</h4><!--注：若树莓派上自带有SD卡即Ubuntu Mate已默认安装，若没有需安装。-->
-
+<h4 id="2-树莓派Ubuntu-Mate系统安装"><a href="#2-树莓派Ubuntu-Mate系统安装" class="headerlink" title="2.树莓派Ubuntu Mate系统安装"></a>2.树莓派Ubuntu Mate系统安装</h4><p>注：若树莓派上自带有SD卡即Ubuntu Mate已默认安装，若没有需安装。</p>
 <p>a）需要的软件和功能：<br>      Panasonic_SDFormatter<br>      ubuntu-mate-16.04<br>      Win32DiskImager</p>
 <p>b）操作过程：<br>    1、Panasonic_SDFormatter格式化TF卡；<br>    2、Win32DiskImager工具将ubuntu-mate-16.04的img文件烧写到TF卡中，然后插入到<a href="http://bbs.elecfans.com/try.html">开发板</a>中。<br>    3、开发板连接鼠标和键盘、HDMI连接显示器、然后通电。通电以后需要对系统进行一些设置才能正常使用系统，具体操作可以根据向导来完成。<br>    4、<strong>连接WIFI</strong>。必须保证PC，虚拟机和小车处于同一网络下，然后连接WIFI，查看连接配置，<strong>通过路由器配置界面得到小车端的IP</strong>。<br>    小车端IP：192.168.1.109<br>    5、<strong>通过PC端的虚拟机测试是否能PING通小车端。</strong></p>
 <p>c）存在问题与简便解决</p>
