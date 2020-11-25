@@ -17,6 +17,20 @@
 ]]></content>
   </entry>
   <entry>
+    <title>B站计网课程学习总结（一）</title>
+    <url>/2020-11-25-B%E7%AB%99%E8%AE%A1%E7%BD%91%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.html</url>
+    <content><![CDATA[<h2 id="B站计网课程学习总结（一）"><a href="#B站计网课程学习总结（一）" class="headerlink" title="B站计网课程学习总结（一）"></a>B站计网课程学习总结（一）</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因HDU老师讲课学不进去（疯狂划水），在学习网站B站上找到了王道的计网视频，觉得讲的很不错，故根据此课程来总结学习大纲（快期末了QAQ）</p>
+<a id="more"></a>
+
+<h3 id="1-第一章综述"><a href="#1-第一章综述" class="headerlink" title="1.第一章综述"></a>1.第一章综述</h3>]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROS小车学习记录</title>
     <url>/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95.html</url>
     <content><![CDATA[<h2 id="ROS小车学习记录"><a href="#ROS小车学习记录" class="headerlink" title="ROS小车学习记录"></a>ROS小车学习记录</h2><h3 id="一、配置与连接"><a href="#一、配置与连接" class="headerlink" title="一、配置与连接"></a>一、配置与连接</h3><h4 id="1-配置VMware虚拟机及ROS-Kinetic-16-04-2"><a href="#1-配置VMware虚拟机及ROS-Kinetic-16-04-2" class="headerlink" title="1.配置VMware虚拟机及ROS Kinetic 16.04.2"></a>1.配置VMware虚拟机及ROS Kinetic 16.04.2</h4><p>a）安装好虚拟机及镜像，虚拟机初始设置为2核4G，设置为4核4G</p>
@@ -65,7 +79,7 @@
 <p>一直按回车键选择默认选项,会在~/.ssh 目录下生成 id_rsa 和 id_rsa.pub 两个文件。然后将 id_rsa.pub 文件复制到远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scp ~&#x2F;.ssh&#x2F;id_rsa.pub username@ip_address:&#x2F;home&#x2F;username</span><br></pre></td></tr></table></figure>
 
-<p>本机中，所用命令为scp ~/.ssh/id_rsa.pub <a href="mailto:&#110;&#x6f;&#100;&#101;&#x73;&#64;&#49;&#x39;&#50;&#46;&#49;&#x36;&#56;&#46;&#49;&#46;&#x31;&#x30;&#57;">&#110;&#x6f;&#100;&#101;&#x73;&#64;&#49;&#x39;&#50;&#46;&#49;&#x36;&#56;&#46;&#49;&#46;&#x31;&#x30;&#57;</a>:/home/nodes</p>
+<p>本机中，所用命令为scp ~/.ssh/id_rsa.pub <a href="mailto:&#x6e;&#111;&#x64;&#101;&#115;&#x40;&#49;&#x39;&#x32;&#46;&#x31;&#54;&#x38;&#x2e;&#x31;&#46;&#x31;&#48;&#x39;">&#x6e;&#111;&#x64;&#101;&#115;&#x40;&#49;&#x39;&#x32;&#46;&#x31;&#54;&#x38;&#x2e;&#x31;&#46;&#x31;&#48;&#x39;</a>:/home/nodes</p>
 <p>b）将公钥文件 id_rsa.pub 拷贝到远程计算机后,SSH 登录到远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh username@ip_address</span><br></pre></td></tr></table></figure>
 
@@ -83,7 +97,7 @@
 <p>接下来在roboware上配置远程主控信息</p>
 <p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/3.png" alt="3"></p>
 <p>步骤：IP，用户名（nodes），一直敲回车就可以了。</p>
-]]></content>
+<h3 id="二、调试及运行"><a href="#二、调试及运行" class="headerlink" title="二、调试及运行"></a>二、调试及运行</h3><h4 id="1-调试"><a href="#1-调试" class="headerlink" title="1.调试"></a>1.调试</h4>]]></content>
       <categories>
         <category>学习</category>
       </categories>
