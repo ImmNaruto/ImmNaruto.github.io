@@ -6,7 +6,7 @@
   <link href="http://immnaruto.github.io/atom.xml" rel="self"/>
   
   <link href="http://immnaruto.github.io/"/>
-  <updated>2020-11-25T10:59:52.313Z</updated>
+  <updated>2020-11-27T07:04:26.156Z</updated>
   <id>http://immnaruto.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HDU操作系统实验一</title>
+    <link href="http://immnaruto.github.io/2020-11-27-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%80.html"/>
+    <id>http://immnaruto.github.io/2020-11-27-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%80.html</id>
+    <published>2020-11-27T06:16:49.146Z</published>
+    <updated>2020-11-27T07:04:26.156Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;HDU操作系统实验一&quot;&gt;&lt;a href=&quot;#HDU操作系统实验一&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验一&quot;&gt;&lt;/a&gt;HDU操作系统实验一&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot; class=&quot;headerlink&quot; title=&quot;一、实验要求&quot;&gt;&lt;/a&gt;一、实验要求&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;添加一个系统调用，实现对指定进程的nice值的修改或读取功能，并返回进程最新的nice值及优先级。建议调用原型是int mysetnice(pid_t pid, int flag, int nicevalue, void_user* prio, void_user* nice)参数含义：&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="http://immnaruto.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="HDU" scheme="http://immnaruto.github.io/tags/HDU/"/>
+    
+    <category term="操作系统" scheme="http://immnaruto.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>B站计网课程学习总结（一）</title>
@@ -61,7 +83,7 @@
     <link href="http://immnaruto.github.io/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html"/>
     <id>http://immnaruto.github.io/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html</id>
     <published>2020-11-24T11:43:47.819Z</published>
-    <updated>2020-11-25T14:45:43.045Z</updated>
+    <updated>2020-11-26T02:50:00.479Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;HDU操作系统实验二&quot;&gt;&lt;a href=&quot;#HDU操作系统实验二&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验二&quot;&gt;&lt;/a&gt;HDU操作系统实验二&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot; class=&quot;headerlink&quot; title=&quot;一、实验要求&quot;&gt;&lt;/a&gt;一、实验要求&lt;/h3&gt;&lt;p&gt;1.设计一个模块，要求列出系统中所有内核线程的程序名、PID、进程状态、进程优先级、父进程的PID。&lt;/p&gt;
