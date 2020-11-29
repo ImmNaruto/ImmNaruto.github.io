@@ -6,7 +6,7 @@
   <link href="http://immnaruto.github.io/atom.xml" rel="self"/>
   
   <link href="http://immnaruto.github.io/"/>
-  <updated>2020-11-29T15:28:26.101Z</updated>
+  <updated>2020-11-29T15:51:19.583Z</updated>
   <id>http://immnaruto.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生活随笔</title>
+    <link href="http://immnaruto.github.io/2020-11-29-%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94.html"/>
+    <id>http://immnaruto.github.io/2020-11-29-%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94.html</id>
+    <published>2020-11-29T15:35:18.212Z</published>
+    <updated>2020-11-29T15:51:19.583Z</updated>
+    
+    
+    <summary type="html">&lt;h4 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h4&gt;&lt;p&gt;我好像是个怀旧的人。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="http://immnaruto.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="生活" scheme="http://immnaruto.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>HDU操作系统实验一</title>

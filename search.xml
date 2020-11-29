@@ -17,6 +17,25 @@
 ]]></content>
   </entry>
   <entry>
+    <title>生活随笔</title>
+    <url>/2020-11-29-%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94.html</url>
+    <content><![CDATA[<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>我好像是个怀旧的人。</p>
+<a id="more"></a>
+
+<p>高中三年想着初中，大学三年想着高中，听歌还全是老歌，以至于现在天天循环从初中开始听了七年的歌（写随笔的时候听的是许嵩的《庐州月》)…说实话，我一点都没有变，只是在努力地适应着生活。</p>
+<p>而我身边的人不这样。</p>
+<p>今天晚上，一个高中的好朋友给我分享了一个链接，标题是：国家奖学金获得者XXX（她本人），一路前行，嘴上说着祝贺，心里略微有了一点苦涩。是啊，相比起其他人的大学，我真的太普通不过了。说着是在计算机专业学习，但是内心对什么都很排斥，想着在自己的小天地，碌碌无为，好吃懒做，在这个高手如云的专业，甚至都排不上号，看着别人一步步变得更好，自己剩下的只有无力。</p>
+<p>之前看到老番茄的毕业视频，其中有一幕是登台演讲的时候，灯光都聚集在他的身上，弹幕都在说他在发光，也许我也曾渴望自己来到大学是这个模样，但三年过去了，一点没变。</p>
+<p>一时不知道说什么下去了，祝大家在自己的世界里，都熠熠发光吧。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HDU操作系统实验一</title>
     <url>/2020-11-27-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%80.html</url>
     <content><![CDATA[<h2 id="HDU操作系统实验一"><a href="#HDU操作系统实验一" class="headerlink" title="HDU操作系统实验一"></a>HDU操作系统实验一</h2><h3 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h3><ul>
@@ -203,7 +222,7 @@
 <p>一直按回车键选择默认选项,会在~/.ssh 目录下生成 id_rsa 和 id_rsa.pub 两个文件。然后将 id_rsa.pub 文件复制到远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scp ~&#x2F;.ssh&#x2F;id_rsa.pub username@ip_address:&#x2F;home&#x2F;username</span><br></pre></td></tr></table></figure>
 
-<p>本机中，所用命令为scp ~/.ssh/id_rsa.pub <a href="mailto:&#110;&#x6f;&#x64;&#x65;&#115;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#x31;&#x2e;&#49;&#x30;&#57;">&#110;&#x6f;&#x64;&#x65;&#115;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#x31;&#x2e;&#49;&#x30;&#57;</a>:/home/nodes</p>
+<p>本机中，所用命令为scp ~/.ssh/id_rsa.pub <a href="mailto:&#110;&#111;&#x64;&#101;&#x73;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#49;&#x2e;&#x31;&#x30;&#57;">&#110;&#111;&#x64;&#101;&#x73;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#49;&#x2e;&#x31;&#x30;&#57;</a>:/home/nodes</p>
 <p>b）将公钥文件 id_rsa.pub 拷贝到远程计算机后,SSH 登录到远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh username@ip_address</span><br></pre></td></tr></table></figure>
 
