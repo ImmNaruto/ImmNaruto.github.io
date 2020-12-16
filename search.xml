@@ -17,9 +17,42 @@
 ]]></content>
   </entry>
   <entry>
+    <title>HDU操作系统实验三</title>
+    <url>/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html</url>
+    <content><![CDATA[<h2 id="HDU操作系统实验三"><a href="#HDU操作系统实验三" class="headerlink" title="HDU操作系统实验三"></a>HDU操作系统实验三</h2><h3 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h3><blockquote>
+<ol>
+<li><p>实验名：Linux进程管理</p>
+</li>
+<li><p>实验要求：<br> 1）实现一个模拟的shell</p>
+<p> ​      编写三个不同的程序cmd1.c、cmd2.c及cmd3.c，每个程序的功能自定，分别编译成可执行文件cmd1、cmd2、cmd3.然后再编写一个程序，模拟shell程序的功能：能根据用户输入的字符串（表示相应的命令名），为相应的命令创建子进程并让他去执行相应的程序，而父进程则等待子进程结束，然后再接收下一条命令。如果接收到的命令为exit，则父进程结束，退出模拟shell；如果接收到的命令是无效命令，则显示“Command not found”，继续等待输入下一条命令。</p>
+<p> 2）实现一个管道通信程序</p>
+<p> ​      由父进程创建一个管道，然后再创建三个子进程，并由这三个子进程利用管道与父进程之间进行通信：子进程发送信息，父进程等三个子进程全部发完消息后再接收信息。通信的具体内容可根据自己的需要随意设计，要求能试验阻塞型读写过程中的各种情况，测试管道的默认大小，并且要求利用 Posix 信号量机制实现进程间对管道的互斥访问。运行程序，观察各种情况下，进程实际读写的字节数以及进程阻塞唤醒的情况。 </p>
+</li>
+</ol>
+<p>​    3）利用Linux消息队列通信机制实现两个线程间的通信</p>
+<p>编写程序创建三个线程：sender1线程、sender2线程和receiver线程，三个线程的功能描述如下：</p>
+<p>①sender1线程：运行函数sender1()，它创建一个消息队列，然后等待用户通过终端输入一串字符，并将这串字符通过消息队列发给receiver线程;可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end1”，并且等待receiver的应答（老师告知可以省略这步，所以代码没有体现，sender2同），等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
+<p>​    ②sender2线程：运行函数sender2()，共享sender1创建的消息队列，等待用户通过终端输入一串字符，并将这串字符通过消息队列发送给receiver线程；可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end2”，并且等待receiver的应答，等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
+<p>​    ③receiver线程：运行函数receive()，它通过消息队列接收来自sender1和sender2两个线程的消息，将消息显示在终端屏幕上，当收到内容为“end1”的消息时，就向sender1发送一个应答消息“over1”；当收到内容为“end2”的消息时，就向sender2发送一个应答消息“over2”；消息接受完成后删除消息队列，结束线程的运行。选择合适的信号量机制实现三个线程之间的同步和互斥</p>
+<p>​    4）利用Linux共享内存通信机制实现两个进程间的通信</p>
+</blockquote>
+ <a id="more"></a>
+
+<h3 id="二、实验思路"><a href="#二、实验思路" class="headerlink" title="二、实验思路"></a>二、实验思路</h3><p>1.第一个的整体思路是遍历各线程，通过用户地址标识符将内核线程和用户线程分开，通过pid进程描述符输出即可。</p>
+<p>2.第二个实验要求需要在加载模块时提供对应pid传入参数，父进程和子进程直接遍历即可，兄弟进程稍微复杂些，需返回父进程的子进程的链表头字段，然后逐个遍历（排除传入pid的进程）。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>HDU</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>生活随笔</title>
     <url>/2020-11-29-%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94.html</url>
-    <content><![CDATA[<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>我好像是个怀旧的人。</p>
+    <content><![CDATA[<h4 id="1-《怀旧》"><a href="#1-《怀旧》" class="headerlink" title="1 《怀旧》"></a>1 《怀旧》</h4><p>我好像是个怀旧的人。</p>
 <a id="more"></a>
 
 <p>高中三年想着初中，大学三年想着高中，听歌还全是老歌，以至于现在天天循环从初中开始听了七年的歌（写随笔的时候听的是许嵩的《庐州月》)…说实话，我一点都没有变，只是在努力地适应着生活。</p>
@@ -231,7 +264,7 @@
 <p>一直按回车键选择默认选项,会在~/.ssh 目录下生成 id_rsa 和 id_rsa.pub 两个文件。然后将 id_rsa.pub 文件复制到远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scp ~&#x2F;.ssh&#x2F;id_rsa.pub username@ip_address:&#x2F;home&#x2F;username</span><br></pre></td></tr></table></figure>
 
-<p>本机中，所用命令为scp ~/.ssh/id_rsa.pub <a href="mailto:&#110;&#x6f;&#100;&#101;&#x73;&#x40;&#49;&#57;&#x32;&#x2e;&#49;&#x36;&#56;&#x2e;&#49;&#46;&#49;&#x30;&#x39;">&#110;&#x6f;&#100;&#101;&#x73;&#x40;&#49;&#57;&#x32;&#x2e;&#49;&#x36;&#56;&#x2e;&#49;&#46;&#49;&#x30;&#x39;</a>:/home/nodes</p>
+<p>本机中，所用命令为<code>scp ~/.ssh/id_rsa.pub nodes@192.168.1.109:/home/nodes</code></p>
 <p>b）将公钥文件 id_rsa.pub 拷贝到远程计算机后,SSH 登录到远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh username@ip_address</span><br></pre></td></tr></table></figure>
 
@@ -240,7 +273,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cat id_rsa.pub &gt;&gt; ~&#x2F;.ssh&#x2F;authorized_keys</span><br><span class="line">$ chmod 600 ~&#x2F;.ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure>
 
 <p>配置完成后,再登录远程计算机就无需输入密码。</p>
-<p>d）接下来,即可配置 RoboWare Studio的远程调试参数进行远程调试<br>修改远程计算机/etc/profile<br>首先,登录远程计算机:</p>
+<p>d）接下来,即可配置 RoboWare Studio的远程调试参数进行远程调试<br>修改远程计算机<code>/etc/profile</code><br>首先,登录远程计算机:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ssh username@ip_address</span><br></pre></td></tr></table></figure>
 
 <p>登录后,切换到 root 用户权限,将 ROS 环境变量信息写入到/etc/profile 文件中:</p>
@@ -249,7 +282,185 @@
 <p>接下来在roboware上配置远程主控信息</p>
 <p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/3.png" alt="3"></p>
 <p>步骤：IP，用户名（nodes），一直敲回车就可以了。</p>
-<h3 id="二、调试及运行"><a href="#二、调试及运行" class="headerlink" title="二、调试及运行"></a>二、调试及运行</h3><h4 id="1-调试"><a href="#1-调试" class="headerlink" title="1.调试"></a>1.调试</h4>]]></content>
+<h3 id="二、调试及运行"><a href="#二、调试及运行" class="headerlink" title="二、调试及运行"></a>二、调试及运行</h3><h4 id="1-基本模块的配置"><a href="#1-基本模块的配置" class="headerlink" title="1.基本模块的配置"></a>1.基本模块的配置</h4><ul>
+<li><p><strong>GY85（方向位置模块）</strong></p>
+<ol>
+<li><p>开启I2C：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
+
+<p>选择3 Interfacing Options</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/4.png" alt="4"></p>
+<p>选择P4</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/5.png" alt="5"></p>
+<p>没有在/dev/目录下发现i2c-x的设备，这个时候需要做以下操作<br>(1) 添加i2c模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;modules</span><br></pre></td></tr></table></figure>
+
+<p>然后添加以下两行内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">i2c-bcm2708 </span><br><span class="line">i2c-dev</span><br></pre></td></tr></table></figure>
+
+<p>再次reboot，就可以看见了。</p>
+<p>(2) 安装i2c工具，查看i2c设备</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install i2c-tools</span><br></pre></td></tr></table></figure>
+
+<p>提供以下i2c的工具命令，如<code>i2cdetect</code>，<code>i2cget</code>，<code>i2cset</code>等。</p>
+<p>(3) 执行命令查看i2c设备</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo i2cdetect -y 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>GY85连线方式</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/6.png" alt="6"></p>
+</li>
+<li><p>github源码下载<code>https://github.com/RigacciOrg/py-qmc5883l</code></p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><strong>GPS模块</strong></p>
+<ol>
+<li><p>数据线连接GPS     <code>/ttyACM0</code></p>
+</li>
+<li><p>输入<code>lsusb</code>找到设备ID</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/7.png" alt="7"></p>
+<p>ID后面的1546对应着<code>idVendor</code>，01a7对应<code>idProduct</code></p>
+</li>
+<li><p>在<code>/etc/udev/rules.d/</code>，找到规则文件<code>xrobot-usb.rules</code>，加入一下文字</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">KERNEL&#x3D;&#x3D;&quot;ttyACM?&quot;, ATTRS&#123;idVendor&#125;&#x3D;&#x3D;&quot;1546&quot;, ATTRS&#123;idProduct&#125;&#x3D;&#x3D;&quot;01a7&quot;, MODE&#x3D;&quot;0666&quot; SYMLINK+&#x3D;&quot;gps&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过minicom获取串口数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install minicom</span><br><span class="line">minicom -b 9600 -o -D &#x2F;dev&#x2F;gps</span><br></pre></td></tr></table></figure>
+
+<p>获取的数据</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/8.png" alt="8"></p>
+</li>
+<li><p>测试代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> serial </span><br><span class="line"><span class="comment">#导入serial模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义读取坐标函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">data_gps</span>():</span></span><br><span class="line">    ser = serial.Serial(<span class="string">&quot;/dev/ttyUSB0&quot;</span>,<span class="number">9600</span>)</span><br><span class="line">    data = []</span><br><span class="line">    line = <span class="built_in">str</span>(<span class="built_in">str</span>(ser.readline())[<span class="number">2</span>:])</span><br><span class="line">    <span class="keyword">if</span> line.startswith(<span class="string">&#x27;$GNGGA&#x27;</span>):</span><br><span class="line">        print(<span class="string">&#x27;接收的数据：&#x27;</span>+<span class="built_in">str</span>(line))</span><br><span class="line">        line = <span class="built_in">str</span>(line).split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">        jing = <span class="built_in">float</span>(line[<span class="number">4</span>][:<span class="number">-7</span>])+<span class="built_in">float</span>(line[<span class="number">4</span>][<span class="number">-7</span>:])/<span class="number">60</span></span><br><span class="line">        wei  = <span class="built_in">float</span>(line[<span class="number">2</span>][:<span class="number">-7</span>])+<span class="built_in">float</span>(line[<span class="number">2</span>][<span class="number">-7</span>:])/<span class="number">60</span></span><br><span class="line">        data.append(jing)</span><br><span class="line">        data.append(wei)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(data[<span class="number">0</span>]),<span class="built_in">float</span>(data[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p>若有数据返回，即可使用。</p>
+</li>
+</ol>
+<blockquote>
+<p>注：在运行过程中会出现获取不到数据的情况（数据内部为空值），若获取不到数据，建议选取空旷地带，受信号干扰小的地方进行测试（本人在实验室和宿舍测试过程中，数据总断断续续，玄学问题，正在改进）</p>
+<p>附三个相关链接：</p>
+<p><a href="https://www.cnblogs.com/wjyHIT2011/articles/6795249.html">https://www.cnblogs.com/wjyHIT2011/articles/6795249.html</a></p>
+<p><a href="https://blog.csdn.net/weixin_44524040/article/details/90215917">https://blog.csdn.net/weixin_44524040/article/details/90215917</a></p>
+<p><a href="https://www.cnblogs.com/hangxin1940/archive/2013/04/02/2997077.html">https://www.cnblogs.com/hangxin1940/archive/2013/04/02/2997077.html</a></p>
+</blockquote>
+</li>
+<li><p><strong>DHT11（温湿度模块）</strong></p>
+<ol>
+<li><p>引脚配置及连接</p>
+<p>树莓派3B引脚图：</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/10.png" alt="10"></p>
+<p>传感器模块图：</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/9.png" alt="9"></p>
+<p>连接方式：</p>
+<p>VCC（或正极） — 树莓派的3v电源</p>
+<p>GND （地线或者负极）— 树莓派的GND接口</p>
+<p>DATA （D或者out） —树莓派的GPIO引脚</p>
+</li>
+<li><p>连接好后，测试</p>
+<p>python使用的是RPi.gpio库来控制引脚，这个库在树莓派里面已经导入了 ，直接使用即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"> </span><br><span class="line">channel =<span class="number">4</span> //引脚号，具体接口看上图配置</span><br><span class="line">data = []</span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line">GPIO.setmode(GPIO.BCM)//编码方式</span><br><span class="line"> </span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">GPIO.setup(channel, GPIO.OUT)</span><br><span class="line">GPIO.output(channel, GPIO.LOW)</span><br><span class="line">time.sleep(<span class="number">0.02</span>)</span><br><span class="line">GPIO.output(channel, GPIO.HIGH)</span><br><span class="line">GPIO.setup(channel, GPIO.IN)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> GPIO.<span class="built_in">input</span>(channel) == GPIO.LOW:</span><br><span class="line">  <span class="keyword">continue</span></span><br><span class="line"><span class="keyword">while</span> GPIO.<span class="built_in">input</span>(channel) == GPIO.HIGH:</span><br><span class="line">  <span class="keyword">continue</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> j &lt; <span class="number">40</span>:</span><br><span class="line">  k = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> GPIO.<span class="built_in">input</span>(channel) == GPIO.LOW:</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line">  <span class="keyword">while</span> GPIO.<span class="built_in">input</span>(channel) == GPIO.HIGH:</span><br><span class="line">    k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> k &gt; <span class="number">100</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">if</span> k &lt; <span class="number">8</span>:</span><br><span class="line">    data.append(<span class="number">0</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    data.append(<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">  j += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;sensor is working.&quot;</span></span><br><span class="line"><span class="built_in">print</span> data</span><br><span class="line"> </span><br><span class="line">humidity_bit = data[<span class="number">0</span>:<span class="number">8</span>]</span><br><span class="line">humidity_point_bit = data[<span class="number">8</span>:<span class="number">16</span>]</span><br><span class="line">temperature_bit = data[<span class="number">16</span>:<span class="number">24</span>]</span><br><span class="line">temperature_point_bit = data[<span class="number">24</span>:<span class="number">32</span>]</span><br><span class="line">check_bit = data[<span class="number">32</span>:<span class="number">40</span>]</span><br><span class="line"> </span><br><span class="line">humidity = <span class="number">0</span></span><br><span class="line">humidity_point = <span class="number">0</span></span><br><span class="line">temperature = <span class="number">0</span></span><br><span class="line">temperature_point = <span class="number">0</span></span><br><span class="line">check = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):</span><br><span class="line">  humidity += humidity_bit[i] * <span class="number">2</span> ** (<span class="number">7</span>-i)</span><br><span class="line">  humidity_point += humidity_point_bit[i] * <span class="number">2</span> ** (<span class="number">7</span>-i)</span><br><span class="line">  temperature += temperature_bit[i] * <span class="number">2</span> ** (<span class="number">7</span>-i)</span><br><span class="line">  temperature_point += temperature_point_bit[i] * <span class="number">2</span> ** (<span class="number">7</span>-i)</span><br><span class="line">  check += check_bit[i] * <span class="number">2</span> ** (<span class="number">7</span>-i)</span><br><span class="line"> </span><br><span class="line">tmp = humidity + humidity_point + temperature + temperature_point</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> check == tmp:</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;temperature :&quot;</span>, temperature, <span class="string">&quot;*C, humidity :&quot;</span>, humidity, <span class="string">&quot;%&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;wrong&quot;</span></span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;temperature :&quot;</span>, temperature, <span class="string">&quot;*C, humidity :&quot;</span>, humidity, <span class="string">&quot;% check :&quot;</span>, check, <span class="string">&quot;, tmp :&quot;</span>, tmp</span><br><span class="line"> </span><br><span class="line">GPIO.cleanup()</span><br></pre></td></tr></table></figure>
+
+<p>这里要注意，编码方式和引脚号</p>
+<p>（1）编码方式：PR库有两种方式，一种是bcm另一种是wiringPi的方式，两者的区别大致是bcm的的pin的序号0，1，3，。。。是与每一个gpio引脚对应的，不包含gnd和电源之类的在内，而wiringPi则是从电源开始为0，然后按增序排。使用python的脚本，只需要在setmode函数里面制定编码方式即可。</p>
+<p>（2）引脚号：程序里面用的是bcm的4号（即channel变量），注意连线方式是否与代码匹配。</p>
+<p>结果图如下：</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/11.png" alt="11"></p>
+</li>
+</ol>
+<blockquote>
+<p>附参考链接：</p>
+<p><a href="https://blog.csdn.net/u010900754/article/details/53078615?locationNum=13&amp;fps=1">https://blog.csdn.net/u010900754/article/details/53078615?locationNum=13&amp;fps=1</a></p>
+<p><a href="https://blog.csdn.net/wc810267705/article/details/79586481?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control">https://blog.csdn.net/wc810267705/article/details/79586481?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control</a></p>
+<p><a href="https://blog.csdn.net/weixin_39289876/article/details/105268867?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control">https://blog.csdn.net/weixin_39289876/article/details/105268867?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control</a></p>
+</blockquote>
+</li>
+<li><p><strong>USB摄像头</strong></p>
+<ol>
+<li><p>本地监控（使用motion模块）</p>
+<p>具体配置：</p>
+<p>1）安装motion</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install motion</span><br></pre></td></tr></table></figure>
+
+<p>2）配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;motion</span><br></pre></td></tr></table></figure>
+
+<p> 将里面的no修改成yes，让motion可以一直在后台运行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">start_motion_daemon&#x3D;yes </span><br></pre></td></tr></table></figure>
+
+<p>然后打开配置文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;motion&#x2F;motion.conf</span><br></pre></td></tr></table></figure>
+
+<p>找到相关配置修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">daemon on  #off改成on</span><br><span class="line">width 800  </span><br><span class="line">height 600 #根据摄像头像素自行更改</span><br><span class="line">framerate 60 #这个代表帧率，50左右效果还行，可根据效果自行更改</span><br><span class="line">stream_localhost off    #设为off</span><br><span class="line">stream_port 8081</span><br><span class="line">stream_maxrate 100 #关键配置，更改后流畅</span><br></pre></td></tr></table></figure>
+
+<p>3）启动motion</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo motion</span><br></pre></td></tr></table></figure>
+
+<p>4）查看视频数据</p>
+<p> 局域网内的设备打开浏览器访问<strong>树莓派IP:8081</strong>即可实现。</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/12.png" alt="12"></p>
+<p>5）退出motion</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo killall -TERM motion</span><br><span class="line">或service motion stop</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>相关链接：</p>
+<p><a href="https://www.jb51.net/article/163690.htm">https://www.jb51.net/article/163690.htm</a></p>
+<p><a href="https://blog.csdn.net/qq_18471449/article/details/104119071">https://blog.csdn.net/qq_18471449/article/details/104119071</a></p>
+</blockquote>
+</li>
+<li><p>使用udp协议传输视频帧上传服务器在线监控（opencv+python）</p>
+<p>首先测试能否顺利调用摄像头：</p>
+<p>终端中输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python &#x2F;&#x2F;确认python版本</span><br><span class="line">uname -a &#x2F;&#x2F;确认OS版本</span><br><span class="line">lsb_release -a </span><br></pre></td></tr></table></figure>
+
+<p> 安装OpenCV和Python版的OpenCV安装包</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install libopencv-dev</span><br><span class="line">sudo apt-get install python-opencv</span><br></pre></td></tr></table></figure>
+
+<p> 测试代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment">#初期化USB摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">while</span>( cap.isOpened() ):</span><br><span class="line"> <span class="comment">#USB摄像头工作时,读取一帧图像</span></span><br><span class="line"> ret, frame = cap.read()</span><br><span class="line"> <span class="comment">#显示图像窗口在树莓派的屏幕上</span></span><br><span class="line"> cv2.imshow(<span class="string">&#x27;Capture&#x27;</span>,frame)</span><br><span class="line"> <span class="comment">#按下q键退出</span></span><br><span class="line"> key = cv2.waitKey(<span class="number">1</span>)</span><br><span class="line"> <span class="comment">#print( &#x27;%08X&#x27; % (key&amp;0xFFFFFFFF) )</span></span><br><span class="line"> <span class="keyword">if</span> key &amp; <span class="number">0x00FF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line"> <span class="keyword">break</span></span><br><span class="line"><span class="comment"># 释放资源和关闭窗口</span></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p>测试输出：</p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/13.png" alt="13"></p>
+<p>若测试成功，即可进行UDP传输，相关原理如下：</p>
+<ul>
+<li><p>视频传输用UDP还是TCP</p>
+<p>​        首先考虑用哪种传输方式，平常TCP用的非常多，但是像视频帧这种数据用TCP不是太合适，因为视频数据的传输最先要考虑的是速度而不是准确性，视频帧的数据量很大，帧间隔也非常短，需要尽量保证传输速度，同时丢失一些数据是无所谓的。TCP需要维护连接、保证数据包正确，会耗费一些时间，因此应该使用UDP，就像所有参考书上说的，UDP不在乎是否建立连接，也不管数据是否能被准确接收，只关心能否把数据发送出去而已。</p>
+<p>​        在Python的socket代码中也可直观地看到UDP的特点，对于发送方，我们通过<code>server=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)</code>创建UDP套接字对象，然后执行<code>server.connect((HOST,PORT))</code> 指定发送方地址，但其实connect函数直接就返回了，不像TCP中的客户端会等待连接成功，接着就可直接在套接字对象上调用send函数发送数据了，这个过程根本没确立连接。</p>
+</li>
+<li><p>图像传输中的编解码</p>
+<p>​        用UDP传输图像有一个很关键的问题需要考虑，就是图像的大小。根据UDP协议，单个包的数据大小最大只能65507个字节（去掉包头），而一般直接从摄像头采集的图像帧的大小比这个数要大得多，以我的逻辑C270为例，单幅图像的大小为480X640X3个字节，远大于65507，因此一个包是没法发送完的。解决方法有两种，一种是把图像拆成几次进行发送，相应的接收端用个循环多次接收，这种方法可以完整地接收数据，但是速度肯定受到影响，而且可能要添加一些自定义规则，徒增麻烦；另一种方法就是发送前先对图像进行编码压缩，接收后再解码，清晰度会有所下降，但是可以保持速度上的优势，这种方式比较合适。</p>
+<p>​        OpenCV中的imencode和imdecode方法可分别用于图像的编码和解码。imencode根据指定的标识将图像数据编码并存入缓存区，函数原型为<code>cv2.imencode(ext, img[, params]) → retval, buf</code>，ext为文件扩展名，指定了存储格式，如’.jpg’；img为需要编码的图像数据； params为指定的编码标识，其形式为<code>paramId_1, paramValue_1, paramId_2, paramValue_2, ... ，</code>对于jpg格式，可以指定标识为CV_IMWRITE_JPEG_QUALITY ，其对应的值在0到100之间，表示了压缩质量，值越大压缩率越大，编码后的数据量越小，但解码后的图像质量也越差。<br>imdecode从缓存区读取图像数据，通过指定标识，可以实现指定的解码格式。imdecode的函数原型为<code>cv2.imdecode(buf, flags) → retval</code> ，其中flags指定图像的读取类型，实际上就是指定了以多少深度多少通道读取图像，比如CV_LOAD_IMAGE_ANYDEPTH（即整数2）表示单个通道，深度不变的灰度图；CV_LOAD_IMAGE_COLOR（即整数1）表示3通道、8位深度的彩色图。</p>
+</li>
+</ul>
+<p>结合套接字对象和编解码函数，就可以编写发送端的代码了，不过还有一个需要注意的地方是发送和接收的数据格式问题，套接字的发送和接收都是字节流，或者说是byte数组，发送数据时需要以字节流格式发送，接收数据后需要把字节流类型转换成合适的数据类型。</p>
+<p>从摄像头获取的图像是480X640X3的numpy.ndarray类型，通过imencode编码，得到？X1的numpy.ndarray对象，经测试，这个对象可以直接发送出去；在接收端，获得的是byte数组，这个数组直接做imdecode的参数会报错，经调试，发现还需要把数组转换成numpy.ndarray类型。</p>
+<ul>
+<li><strong>树莓派端</strong>代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">HOST=<span class="string">&#x27;192.168.1.122&#x27;</span></span><br><span class="line">PORT=<span class="number">9999</span></span><br><span class="line">server=socket.socket(socket.AF_INET,socket.SOCK_DGRAM) <span class="comment">#socket对象</span></span><br><span class="line">server.connect((HOST,PORT))</span><br><span class="line">print(<span class="string">&#x27;now starting to send frames...&#x27;</span>)</span><br><span class="line">capture=cv2.VideoCapture(<span class="number">0</span>) <span class="comment">#VideoCapture对象，可获取摄像头设备的数据</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    success,frame=capture.read()</span><br><span class="line">    result,imgencode=cv2.imencode(<span class="string">&#x27;.jpg&#x27;</span>,frame,[cv2.IMWRITE_JPEG_QUALITY,<span class="number">50</span>]) <span class="comment">#编码</span></span><br><span class="line">    server.sendall(struct.pack(<span class="string">&#x27;i&#x27;</span>,imgencode.shape[<span class="number">0</span>])) <span class="comment">#发送编码后的字节长度，这个值不是固定的</span></span><br><span class="line">    server.sendall(imgencode) <span class="comment">#发送视频帧数据</span></span><br><span class="line">    print(<span class="string">&#x27;have sent one frame&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">  print(e)</span><br><span class="line">  server.sendall(struct.pack(<span class="string">&#x27;c&#x27;</span>,<span class="number">1</span>)) <span class="comment">#发送关闭消息</span></span><br><span class="line">  capture.release()</span><br><span class="line">  server.close()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>服务器端</strong>代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">HOST=<span class="string">&#x27;192.168.191.122&#x27;</span></span><br><span class="line">PORT=<span class="number">9999</span></span><br><span class="line">buffSize=<span class="number">65535</span></span><br><span class="line">server=socket.socket(socket.AF_INET,socket.SOCK_DGRAM) <span class="comment">#创建socket对象</span></span><br><span class="line">server.bind((HOST,PORT))</span><br><span class="line">print(<span class="string">&#x27;now waiting for frames...&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  data,address=server.recvfrom(buffSize) <span class="comment">#先接收的是字节长度</span></span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(data)==<span class="number">1</span> <span class="keyword">and</span> data[<span class="number">0</span>]==<span class="number">1</span>: <span class="comment">#如果收到关闭消息则停止程序</span></span><br><span class="line">    server.close()</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line">    exit()</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(data)!=<span class="number">4</span>: <span class="comment">#进行简单的校验，长度值是int类型，占四个字节</span></span><br><span class="line">    length=<span class="number">0</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    length=struct.unpack(<span class="string">&#x27;i&#x27;</span>,data)[<span class="number">0</span>] <span class="comment">#长度值</span></span><br><span class="line">  data,address=server.recvfrom(buffSize) <span class="comment">#接收编码图像数据</span></span><br><span class="line">  <span class="keyword">if</span> length!=<span class="built_in">len</span>(data): <span class="comment">#进行简单的校验</span></span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line">  data=numpy.array(<span class="built_in">bytearray</span>(data)) <span class="comment">#格式转换</span></span><br><span class="line">  imgdecode=cv2.imdecode(data,<span class="number">1</span>) <span class="comment">#解码</span></span><br><span class="line">  print(<span class="string">&#x27;have received one frame&#x27;</span>)</span><br><span class="line">  cv2.imshow(<span class="string">&#x27;frames&#x27;</span>,imgdecode) <span class="comment">#窗口显示</span></span><br><span class="line">  <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>)==<span class="number">27</span>: <span class="comment">#按下“ESC”退出</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">server.close()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>测试验证</p>
+<p>使用本地客户端可以流畅显示，服务器端还未对接，之后贴图。</p>
+</li>
+</ul>
+<blockquote>
+<p>相关链接：</p>
+<p><a href="https://www.jb51.net/article/174308.htm">https://www.jb51.net/article/174308.htm</a></p>
+<p><a href="https://www.jb51.net/article/163696.htm">https://www.jb51.net/article/163696.htm</a></p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>学习</category>
       </categories>
