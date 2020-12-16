@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"immnaruto.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"immnaruto.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="ROS小车学习记录一、配置与连接1.配置VMware虚拟机及ROS Kinetic 16.04.2a）安装好虚拟机及镜像，虚拟机初始设置为2核4G，设置为4核4G">
@@ -27,26 +27,26 @@
 <meta property="og:site_name" content="Hai的BLOG">
 <meta property="og:description" content="ROS小车学习记录一、配置与连接1.配置VMware虚拟机及ROS Kinetic 16.04.2a）安装好虚拟机及镜像，虚拟机初始设置为2核4G，设置为4核4G">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://immnaruto.github.io/1606264498962.png">
-<meta property="og:image" content="http://immnaruto.github.io/1606264982920.png">
-<meta property="og:image" content="http://immnaruto.github.io/3.png">
-<meta property="og:image" content="http://immnaruto.github.io/4.png">
-<meta property="og:image" content="http://immnaruto.github.io/5.png">
-<meta property="og:image" content="http://immnaruto.github.io/6.png">
-<meta property="og:image" content="http://immnaruto.github.io/7.png">
-<meta property="og:image" content="http://immnaruto.github.io/8.png">
-<meta property="og:image" content="http://immnaruto.github.io/10.png">
-<meta property="og:image" content="http://immnaruto.github.io/9.png">
-<meta property="og:image" content="http://immnaruto.github.io/11.png">
-<meta property="og:image" content="http://immnaruto.github.io/12.png">
-<meta property="og:image" content="http://immnaruto.github.io/13.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264498962.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264982920.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/3.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/4.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/5.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/6.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/7.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/8.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/10.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/9.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/11.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/12.png">
+<meta property="og:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/13.png">
 <meta property="article:published_time" content="2020-11-24T14:40:16.584Z">
 <meta property="article:modified_time" content="2020-12-16T07:48:33.955Z">
 <meta property="article:author" content="DH">
 <meta property="article:tag" content="HDU">
 <meta property="article:tag" content="ROS小车">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://immnaruto.github.io/1606264498962.png">
+<meta name="twitter:image" content="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264498962.png">
 
 <link rel="canonical" href="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95.html">
 
@@ -290,9 +290,9 @@
         <h2 id="ROS小车学习记录"><a href="#ROS小车学习记录" class="headerlink" title="ROS小车学习记录"></a>ROS小车学习记录</h2><h3 id="一、配置与连接"><a href="#一、配置与连接" class="headerlink" title="一、配置与连接"></a>一、配置与连接</h3><h4 id="1-配置VMware虚拟机及ROS-Kinetic-16-04-2"><a href="#1-配置VMware虚拟机及ROS-Kinetic-16-04-2" class="headerlink" title="1.配置VMware虚拟机及ROS Kinetic 16.04.2"></a>1.配置VMware虚拟机及ROS Kinetic 16.04.2</h4><p>a）安装好虚拟机及镜像，虚拟机初始设置为2核4G，设置为4核4G</p>
 <a id="more"></a>
 
-<p><img data-src="1606264498962.png" alt="1606264498962"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264498962.png" alt="1606264498962"></p>
 <p>b）设置虚拟机网络模式为桥接模式，用Windows的无线网卡桥接</p>
-<p><img data-src="1606264982920.png" alt="1606264982920"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1606264982920.png" alt="1606264982920"></p>
 <p>c）确认Windows IP地址和虚拟机 IP地址（应在同一网段下）</p>
 <p>以本机为例：</p>
 <p>windows IP：192.108.1.103</p>
@@ -349,7 +349,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo su</span><br><span class="line">$ echo &quot;source &#x2F;opt&#x2F;ros&#x2F;indigo&#x2F;setup.bash&quot; &gt;&gt; &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
 
 <p>接下来在roboware上配置远程主控信息</p>
-<p><img data-src="3.png" alt="3"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/3.png" alt="3"></p>
 <p>步骤：IP，用户名（nodes），一直敲回车就可以了。</p>
 <h3 id="二、调试及运行"><a href="#二、调试及运行" class="headerlink" title="二、调试及运行"></a>二、调试及运行</h3><h4 id="1-基本模块的配置"><a href="#1-基本模块的配置" class="headerlink" title="1.基本模块的配置"></a>1.基本模块的配置</h4><ul>
 <li><p><strong>GY85（方向位置模块）</strong></p>
@@ -358,9 +358,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
 
 <p>选择3 Interfacing Options</p>
-<p><img data-src="4.png" alt="4"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/4.png" alt="4"></p>
 <p>选择P4</p>
-<p><img data-src="5.png" alt="5"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/5.png" alt="5"></p>
 <p>没有在/dev/目录下发现i2c-x的设备，这个时候需要做以下操作<br>(1) 添加i2c模块</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;modules</span><br></pre></td></tr></table></figure>
 
@@ -376,7 +376,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo i2cdetect -y 1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>GY85连线方式</p>
-<p><img data-src="6.png" alt="6"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/6.png" alt="6"></p>
 </li>
 <li><p>github源码下载<code>https://github.com/RigacciOrg/py-qmc5883l</code></p>
 <p>安装：</p>
@@ -389,7 +389,7 @@
 <li><p>数据线连接GPS     <code>/ttyACM0</code></p>
 </li>
 <li><p>输入<code>lsusb</code>找到设备ID</p>
-<p><img data-src="7.png" alt="7"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/7.png" alt="7"></p>
 <p>ID后面的1546对应着<code>idVendor</code>，01a7对应<code>idProduct</code></p>
 </li>
 <li><p>在<code>/etc/udev/rules.d/</code>，找到规则文件<code>xrobot-usb.rules</code>，加入一下文字</p>
@@ -399,7 +399,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install minicom</span><br><span class="line">minicom -b 9600 -o -D &#x2F;dev&#x2F;gps</span><br></pre></td></tr></table></figure>
 
 <p>获取的数据</p>
-<p><img data-src="8.png" alt="8"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/8.png" alt="8"></p>
 </li>
 <li><p>测试代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> serial </span><br><span class="line"><span class="comment">#导入serial模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义读取坐标函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">data_gps</span>():</span></span><br><span class="line">    ser = serial.Serial(<span class="string">&quot;/dev/ttyUSB0&quot;</span>,<span class="number">9600</span>)</span><br><span class="line">    data = []</span><br><span class="line">    line = <span class="built_in">str</span>(<span class="built_in">str</span>(ser.readline())[<span class="number">2</span>:])</span><br><span class="line">    <span class="keyword">if</span> line.startswith(<span class="string">&#x27;$GNGGA&#x27;</span>):</span><br><span class="line">        print(<span class="string">&#x27;接收的数据：&#x27;</span>+<span class="built_in">str</span>(line))</span><br><span class="line">        line = <span class="built_in">str</span>(line).split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">        jing = <span class="built_in">float</span>(line[<span class="number">4</span>][:<span class="number">-7</span>])+<span class="built_in">float</span>(line[<span class="number">4</span>][<span class="number">-7</span>:])/<span class="number">60</span></span><br><span class="line">        wei  = <span class="built_in">float</span>(line[<span class="number">2</span>][:<span class="number">-7</span>])+<span class="built_in">float</span>(line[<span class="number">2</span>][<span class="number">-7</span>:])/<span class="number">60</span></span><br><span class="line">        data.append(jing)</span><br><span class="line">        data.append(wei)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(data[<span class="number">0</span>]),<span class="built_in">float</span>(data[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
@@ -419,9 +419,9 @@
 <ol>
 <li><p>引脚配置及连接</p>
 <p>树莓派3B引脚图：</p>
-<p><img data-src="10.png" alt="10"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/10.png" alt="10"></p>
 <p>传感器模块图：</p>
-<p><img data-src="9.png" alt="9"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/9.png" alt="9"></p>
 <p>连接方式：</p>
 <p>VCC（或正极） — 树莓派的3v电源</p>
 <p>GND （地线或者负极）— 树莓派的GND接口</p>
@@ -435,7 +435,7 @@
 <p>（1）编码方式：PR库有两种方式，一种是bcm另一种是wiringPi的方式，两者的区别大致是bcm的的pin的序号0，1，3，。。。是与每一个gpio引脚对应的，不包含gnd和电源之类的在内，而wiringPi则是从电源开始为0，然后按增序排。使用python的脚本，只需要在setmode函数里面制定编码方式即可。</p>
 <p>（2）引脚号：程序里面用的是bcm的4号（即channel变量），注意连线方式是否与代码匹配。</p>
 <p>结果图如下：</p>
-<p><img data-src="11.png" alt="11"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/11.png" alt="11"></p>
 </li>
 </ol>
 <blockquote>
@@ -469,7 +469,7 @@
 
 <p>4）查看视频数据</p>
 <p> 局域网内的设备打开浏览器访问<strong>树莓派IP:8081</strong>即可实现。</p>
-<p><img data-src="12.png" alt="12"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/12.png" alt="12"></p>
 <p>5）退出motion</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo killall -TERM motion</span><br><span class="line">或service motion stop</span><br></pre></td></tr></table></figure>
 
@@ -491,7 +491,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment">#初期化USB摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">while</span>( cap.isOpened() ):</span><br><span class="line"> <span class="comment">#USB摄像头工作时,读取一帧图像</span></span><br><span class="line"> ret, frame = cap.read()</span><br><span class="line"> <span class="comment">#显示图像窗口在树莓派的屏幕上</span></span><br><span class="line"> cv2.imshow(<span class="string">&#x27;Capture&#x27;</span>,frame)</span><br><span class="line"> <span class="comment">#按下q键退出</span></span><br><span class="line"> key = cv2.waitKey(<span class="number">1</span>)</span><br><span class="line"> <span class="comment">#print( &#x27;%08X&#x27; % (key&amp;0xFFFFFFFF) )</span></span><br><span class="line"> <span class="keyword">if</span> key &amp; <span class="number">0x00FF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line"> <span class="keyword">break</span></span><br><span class="line"><span class="comment"># 释放资源和关闭窗口</span></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 
 <p>测试输出：</p>
-<p><img data-src="13.png" alt="13"></p>
+<p><img src="/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/13.png" alt="13"></p>
 <p>若测试成功，即可进行UDP传输，相关原理如下：</p>
 <ul>
 <li><p>视频传输用UDP还是TCP</p>
@@ -779,7 +779,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
