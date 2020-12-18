@@ -494,7 +494,7 @@
 
 </li>
 </ul>
-<h3 id="3-网络协议部分详解"><a href="#3-网络协议部分详解" class="headerlink" title="3.网络协议部分详解"></a>3.网络协议部分详解</h3><ul>
+<h4 id="3-网络协议部分详解"><a href="#3-网络协议部分详解" class="headerlink" title="3.网络协议部分详解"></a>3.网络协议部分详解</h4><ul>
 <li><p><strong>与服务器建立连接</strong>（TCP协议）</p>
 <p>采用TCP协议保证连接的准确性和稳定性。</p>
 <p>附客户端源码：</p>
