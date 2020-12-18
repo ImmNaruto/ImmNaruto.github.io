@@ -312,10 +312,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-12-15 09:53:57 / 修改时间：10:55:10" itemprop="dateCreated datePublished" datetime="2020-12-15T09:53:57+08:00">2020-12-15</time>
+              <time title="创建时间：2020-12-15 09:53:57" itemprop="dateCreated datePublished" datetime="2020-12-15T09:53:57+08:00">2020-12-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-17 10:38:20" itemprop="dateModified" datetime="2020-12-17T10:38:20+08:00">2020-12-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -353,21 +359,7 @@
       
           <h2 id="HDU操作系统实验三"><a href="#HDU操作系统实验三" class="headerlink" title="HDU操作系统实验三"></a>HDU操作系统实验三</h2><h3 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h3><blockquote>
 <ol>
-<li><p>实验名：Linux进程管理</p>
-</li>
-<li><p>实验要求：<br> 1）实现一个模拟的shell</p>
-<p> ​      编写三个不同的程序cmd1.c、cmd2.c及cmd3.c，每个程序的功能自定，分别编译成可执行文件cmd1、cmd2、cmd3.然后再编写一个程序，模拟shell程序的功能：能根据用户输入的字符串（表示相应的命令名），为相应的命令创建子进程并让他去执行相应的程序，而父进程则等待子进程结束，然后再接收下一条命令。如果接收到的命令为exit，则父进程结束，退出模拟shell；如果接收到的命令是无效命令，则显示“Command not found”，继续等待输入下一条命令。</p>
-<p> 2）实现一个管道通信程序</p>
-<p> ​      由父进程创建一个管道，然后再创建三个子进程，并由这三个子进程利用管道与父进程之间进行通信：子进程发送信息，父进程等三个子进程全部发完消息后再接收信息。通信的具体内容可根据自己的需要随意设计，要求能试验阻塞型读写过程中的各种情况，测试管道的默认大小，并且要求利用 Posix 信号量机制实现进程间对管道的互斥访问。运行程序，观察各种情况下，进程实际读写的字节数以及进程阻塞唤醒的情况。 </p>
-</li>
-</ol>
-<p>​    3）利用Linux消息队列通信机制实现两个线程间的通信</p>
-<p>编写程序创建三个线程：sender1线程、sender2线程和receiver线程，三个线程的功能描述如下：</p>
-<p>①sender1线程：运行函数sender1()，它创建一个消息队列，然后等待用户通过终端输入一串字符，并将这串字符通过消息队列发给receiver线程;可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end1”，并且等待receiver的应答（老师告知可以省略这步，所以代码没有体现，sender2同），等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
-<p>​    ②sender2线程：运行函数sender2()，共享sender1创建的消息队列，等待用户通过终端输入一串字符，并将这串字符通过消息队列发送给receiver线程；可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end2”，并且等待receiver的应答，等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
-<p>​    ③receiver线程：运行函数receive()，它通过消息队列接收来自sender1和sender2两个线程的消息，将消息显示在终端屏幕上，当收到内容为“end1”的消息时，就向sender1发送一个应答消息“over1”；当收到内容为“end2”的消息时，就向sender2发送一个应答消息“over2”；消息接受完成后删除消息队列，结束线程的运行。选择合适的信号量机制实现三个线程之间的同步和互斥</p>
-<p>​    4）利用Linux共享内存通信机制实现两个进程间的通信</p>
-</blockquote>
+<li><p>实验名：Linux进程管理</p></li></ol></blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html#more" rel="contents">
@@ -713,7 +705,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-16 15:48:33" itemprop="dateModified" datetime="2020-12-16T15:48:33+08:00">2020-12-16</time>
+                <time title="修改时间：2020-12-17 13:18:31" itemprop="dateModified" datetime="2020-12-17T13:18:31+08:00">2020-12-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">

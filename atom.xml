@@ -6,7 +6,7 @@
   <link href="http://immnaruto.github.io/atom.xml" rel="self"/>
   
   <link href="http://immnaruto.github.io/"/>
-  <updated>2020-12-15T02:55:10.198Z</updated>
+  <updated>2020-12-17T02:38:20.679Z</updated>
   <id>http://immnaruto.github.io/</id>
   
   <author>
@@ -21,26 +21,12 @@
     <link href="http://immnaruto.github.io/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html"/>
     <id>http://immnaruto.github.io/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html</id>
     <published>2020-12-15T01:53:57.155Z</published>
-    <updated>2020-12-15T02:55:10.198Z</updated>
+    <updated>2020-12-17T02:38:20.679Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;HDU操作系统实验三&quot;&gt;&lt;a href=&quot;#HDU操作系统实验三&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验三&quot;&gt;&lt;/a&gt;HDU操作系统实验三&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot; class=&quot;headerlink&quot; title=&quot;一、实验要求&quot;&gt;&lt;/a&gt;一、实验要求&lt;/h3&gt;&lt;blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;实验名：Linux进程管理&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;实验要求：&lt;br&gt; 1）实现一个模拟的shell&lt;/p&gt;
-&lt;p&gt; ​      编写三个不同的程序cmd1.c、cmd2.c及cmd3.c，每个程序的功能自定，分别编译成可执行文件cmd1、cmd2、cmd3.然后再编写一个程序，模拟shell程序的功能：能根据用户输入的字符串（表示相应的命令名），为相应的命令创建子进程并让他去执行相应的程序，而父进程则等待子进程结束，然后再接收下一条命令。如果接收到的命令为exit，则父进程结束，退出模拟shell；如果接收到的命令是无效命令，则显示“Command not found”，继续等待输入下一条命令。&lt;/p&gt;
-&lt;p&gt; 2）实现一个管道通信程序&lt;/p&gt;
-&lt;p&gt; ​      由父进程创建一个管道，然后再创建三个子进程，并由这三个子进程利用管道与父进程之间进行通信：子进程发送信息，父进程等三个子进程全部发完消息后再接收信息。通信的具体内容可根据自己的需要随意设计，要求能试验阻塞型读写过程中的各种情况，测试管道的默认大小，并且要求利用 Posix 信号量机制实现进程间对管道的互斥访问。运行程序，观察各种情况下，进程实际读写的字节数以及进程阻塞唤醒的情况。 &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;​    3）利用Linux消息队列通信机制实现两个线程间的通信&lt;/p&gt;
-&lt;p&gt;编写程序创建三个线程：sender1线程、sender2线程和receiver线程，三个线程的功能描述如下：&lt;/p&gt;
-&lt;p&gt;①sender1线程：运行函数sender1()，它创建一个消息队列，然后等待用户通过终端输入一串字符，并将这串字符通过消息队列发给receiver线程;可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end1”，并且等待receiver的应答（老师告知可以省略这步，所以代码没有体现，sender2同），等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。&lt;/p&gt;
-&lt;p&gt;​    ②sender2线程：运行函数sender2()，共享sender1创建的消息队列，等待用户通过终端输入一串字符，并将这串字符通过消息队列发送给receiver线程；可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end2”，并且等待receiver的应答，等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。&lt;/p&gt;
-&lt;p&gt;​    ③receiver线程：运行函数receive()，它通过消息队列接收来自sender1和sender2两个线程的消息，将消息显示在终端屏幕上，当收到内容为“end1”的消息时，就向sender1发送一个应答消息“over1”；当收到内容为“end2”的消息时，就向sender2发送一个应答消息“over2”；消息接受完成后删除消息队列，结束线程的运行。选择合适的信号量机制实现三个线程之间的同步和互斥&lt;/p&gt;
-&lt;p&gt;​    4）利用Linux共享内存通信机制实现两个进程间的通信&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
+&lt;li&gt;&lt;p&gt;实验名：Linux进程管理&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;</summary>
     
     
     
@@ -118,7 +104,7 @@
     <link href="http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95.html"/>
     <id>http://immnaruto.github.io/2020-11-24-ROS%E5%B0%8F%E8%BD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95.html</id>
     <published>2020-11-24T14:40:16.584Z</published>
-    <updated>2020-12-16T07:48:33.955Z</updated>
+    <updated>2020-12-17T05:18:31.571Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;ROS小车学习记录&quot;&gt;&lt;a href=&quot;#ROS小车学习记录&quot; class=&quot;headerlink&quot; title=&quot;ROS小车学习记录&quot;&gt;&lt;/a&gt;ROS小车学习记录&lt;/h2&gt;&lt;h3 id=&quot;一、配置与连接&quot;&gt;&lt;a href=&quot;#一、配置与连接&quot; class=&quot;headerlink&quot; title=&quot;一、配置与连接&quot;&gt;&lt;/a&gt;一、配置与连接&lt;/h3&gt;&lt;h4 id=&quot;1-配置VMware虚拟机及ROS-Kinetic-16-04-2&quot;&gt;&lt;a href=&quot;#1-配置VMware虚拟机及ROS-Kinetic-16-04-2&quot; class=&quot;headerlink&quot; title=&quot;1.配置VMware虚拟机及ROS Kinetic 16.04.2&quot;&gt;&lt;/a&gt;1.配置VMware虚拟机及ROS Kinetic 16.04.2&lt;/h4&gt;&lt;p&gt;a）安装好虚拟机及镜像，虚拟机初始设置为2核4G，设置为4核4G&lt;/p&gt;</summary>
