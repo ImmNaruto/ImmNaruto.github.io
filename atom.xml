@@ -6,7 +6,7 @@
   <link href="http://immnaruto.github.io/atom.xml" rel="self"/>
   
   <link href="http://immnaruto.github.io/"/>
-  <updated>2020-12-17T02:38:20.679Z</updated>
+  <updated>2020-12-27T12:30:44.913Z</updated>
   <id>http://immnaruto.github.io/</id>
   
   <author>
@@ -21,21 +21,16 @@
     <link href="http://immnaruto.github.io/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html"/>
     <id>http://immnaruto.github.io/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html</id>
     <published>2020-12-15T01:53:57.155Z</published>
-    <updated>2020-12-17T02:38:20.679Z</updated>
+    <updated>2020-12-27T12:30:44.913Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;HDU操作系统实验三&quot;&gt;&lt;a href=&quot;#HDU操作系统实验三&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验三&quot;&gt;&lt;/a&gt;HDU操作系统实验三&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot; class=&quot;headerlink&quot; title=&quot;一、实验要求&quot;&gt;&lt;/a&gt;一、实验要求&lt;/h3&gt;&lt;blockquote&gt;
+    <summary type="html">&lt;h2 id=&quot;HDU操作系统实验三&quot;&gt;&lt;a href=&quot;#HDU操作系统实验三&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验三&quot;&gt;&lt;/a&gt;HDU操作系统实验三&lt;/h2&gt;&lt;h3 id=&quot;实验要求&quot;&gt;&lt;a href=&quot;#实验要求&quot; class=&quot;headerlink&quot; title=&quot;# 实验要求&quot;&gt;&lt;/a&gt;# 实验要求&lt;/h3&gt;&lt;blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;实验名：Linux进程管理&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;</summary>
+&lt;li&gt;实验名：Linux进程管理&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;</summary>
     
     
     
-    <category term="学习" scheme="http://immnaruto.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="HDU" scheme="http://immnaruto.github.io/tags/HDU/"/>
-    
-    <category term="操作系统" scheme="http://immnaruto.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -125,7 +120,7 @@
     <link href="http://immnaruto.github.io/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html"/>
     <id>http://immnaruto.github.io/2020-11-24-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%BA%8C.html</id>
     <published>2020-11-24T11:43:47.819Z</published>
-    <updated>2020-11-26T02:50:00.479Z</updated>
+    <updated>2020-12-24T04:28:59.498Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;HDU操作系统实验二&quot;&gt;&lt;a href=&quot;#HDU操作系统实验二&quot; class=&quot;headerlink&quot; title=&quot;HDU操作系统实验二&quot;&gt;&lt;/a&gt;HDU操作系统实验二&lt;/h2&gt;&lt;h3 id=&quot;一、实验要求&quot;&gt;&lt;a href=&quot;#一、实验要求&quot; class=&quot;headerlink&quot; title=&quot;一、实验要求&quot;&gt;&lt;/a&gt;一、实验要求&lt;/h3&gt;&lt;p&gt;1.设计一个模块，要求列出系统中所有内核线程的程序名、PID、进程状态、进程优先级、父进程的PID。&lt;/p&gt;

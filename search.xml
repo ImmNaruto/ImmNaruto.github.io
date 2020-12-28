@@ -19,36 +19,169 @@
   <entry>
     <title>HDU操作系统实验三</title>
     <url>/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89.html</url>
-    <content><![CDATA[<h2 id="HDU操作系统实验三"><a href="#HDU操作系统实验三" class="headerlink" title="HDU操作系统实验三"></a>HDU操作系统实验三</h2><h3 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h3><blockquote>
+    <content><![CDATA[<h2 id="HDU操作系统实验三"><a href="#HDU操作系统实验三" class="headerlink" title="HDU操作系统实验三"></a>HDU操作系统实验三</h2><h3 id="实验要求"><a href="#实验要求" class="headerlink" title="# 实验要求"></a># 实验要求</h3><blockquote>
 <ol>
-<li><p>实验名：Linux进程管理</p>
+<li>实验名：Linux进程管理</li>
+</ol>
 <a id="more"></a>
-</li>
-<li><p>实验要求：<br>1）实现一个模拟的shell</p>
-<p>​      编写三个不同的程序cmd1.c、cmd2.c及cmd3.c，每个程序的功能自定，分别编译成可执行文件cmd1、cmd2、cmd3.然后再编写一个程序，模拟shell程序的功能：能根据用户输入的字符串（表示相应的命令名），为相应的命令创建子进程并让他去执行相应的程序，而父进程则等待子进程结束，然后再接收下一条命令。如果接收到的命令为exit，则父进程结束，退出模拟shell；如果接收到的命令是无效命令，则显示“Command not found”，继续等待输入下一条命令。</p>
-<p>2）实现一个管道通信程序</p>
-<p>​      由父进程创建一个管道，然后再创建三个子进程，并由这三个子进程利用管道与父进程之间进行通信：子进程发送信息，父进程等三个子进程全部发完消息后再接收信息。通信的具体内容可根据自己的需要随意设计，要求能试验阻塞型读写过程中的各种情况，测试管道的默认大小，并且要求利用 Posix 信号量机制实现进程间对管道的互斥访问。运行程序，观察各种情况下，进程实际读写的字节数以及进程阻塞唤醒的情况。 </p>
+
+<ol start="2">
+<li><p>实验要求：</p>
+<p>1）实现一个模拟的shell</p>
 </li>
 </ol>
-<p>​    3）利用Linux消息队列通信机制实现两个线程间的通信</p>
-<p>编写程序创建三个线程：sender1线程、sender2线程和receiver线程，三个线程的功能描述如下：</p>
-<p>①sender1线程：运行函数sender1()，它创建一个消息队列，然后等待用户通过终端输入一串字符，并将这串字符通过消息队列发给receiver线程;可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end1”，并且等待receiver的应答（老师告知可以省略这步，所以代码没有体现，sender2同），等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
-<p>​    ②sender2线程：运行函数sender2()，共享sender1创建的消息队列，等待用户通过终端输入一串字符，并将这串字符通过消息队列发送给receiver线程；可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end2”，并且等待receiver的应答，等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
-<p>​    ③receiver线程：运行函数receive()，它通过消息队列接收来自sender1和sender2两个线程的消息，将消息显示在终端屏幕上，当收到内容为“end1”的消息时，就向sender1发送一个应答消息“over1”；当收到内容为“end2”的消息时，就向sender2发送一个应答消息“over2”；消息接受完成后删除消息队列，结束线程的运行。选择合适的信号量机制实现三个线程之间的同步和互斥</p>
-<p>​    4）利用Linux共享内存通信机制实现两个进程间的通信</p>
+<p>​        编写三个不同的程序cmd1.c、cmd2.c及cmd3.c，每个程序的功能自定，分别编译成可执行文件cmd1、cmd2、cmd3.然后再编写一个程序，模拟shell程序的功能：能根据用户输入的字符串（表示相应的命令名），为相应的命令创建子进程并让他去执行相应的程序，而父进程则等待子进程结束，然后再接收下一条命令。如果接收到的命令为exit，则父进程结束，退出模拟shell；如果接收到的命令是无效命令，则显示“Command not found”，继续等待输入下一条命令。</p>
+<p>​        2）实现一个管道通信程序</p>
+<p>​        由父进程创建一个管道，然后再创建三个子进程，并由这三个子进程利用管道与父进程之间进行通信：子进程发送信息，父进程等三个子进程全部发完消息后再接收信息。通信的具体内容可根据自己的需要随意设计，要求能试验阻塞型读写过程中的各种情况，测试管道的默认大小，并且要求利用 Posix 信号量机制实现进程间对管道的互斥访问。运行程序，观察各种情况下，进程实际读写的字节数以及进程阻塞唤醒的情况。 </p>
+<p>​        3）利用Linux消息队列通信机制实现两个线程间的通信</p>
+<p>​        编写程序创建三个线程：sender1线程、sender2线程和receiver线程，三个线程的功能描述如下：</p>
+<p>​        ①sender1线程：运行函数sender1()，它创建一个消息队列，然后等待用户通过终端输入一串字符，并将这串字符通过消息队列发给receiver线程;可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end1”，并且等待receiver的应答（老师告知可以省略这步，所以代码没有体现，sender2同），等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
+<p>​        ②sender2线程：运行函数sender2()，共享sender1创建的消息队列，等待用户通过终端输入一串字符，并将这串字符通过消息队列发送给receiver线程；可循环发送多个消息，直到用户输入“exit”为止，表示它不再发送消息，最后向receiver线程发送消息“end2”，并且等待receiver的应答，等到应答消息后，将接收到的应答信息显示在终端屏幕上，结束线程的运行。</p>
+<pre><code>    ③receiver线程：运行函数receive()，它通过消息队列接收来自sender1和sender2两个线程的消息，将消息显示在终端屏幕上，当收到内容为“end1”的消息时，就向sender1发送一个应答消息“over1”；当收到内容为“end2”的消息时，就向sender2发送一个应答消息“over2”；消息接受完成后删除消息队列，结束线程的运行。选择合适的信号量机制实现三个线程之间的同步和互斥</code></pre>
+<p>​        4）利用Linux共享内存通信机制实现两个进程间的通信</p>
+<p>​        编写程序sender，它创建一个共享内存，然后等待用户通过终端输入一串字符，并将这串字符通过共享内存发送给receiver；最后，它等待receiver的应答，收到应答消息后，将接收到的应答信息显示在终端屏幕上，删除共享内存，结束程序的运行。编写receiver程序，它通过共享内存接收来自sender的消息，将消息显示在终端屏幕上，然后再通过该共享内存向sender发送一个应答消息“over”，结束程序的运行。选择合适的信号量机制实现两个进程对共享内存的互斥及同步使用。</p>
 </blockquote>
- <!--more-->
+<h3 id="实验思路"><a href="#实验思路" class="headerlink" title="# 实验思路"></a># 实验思路</h3><ol>
+<li><p><strong>实验一</strong></p>
+<ul>
+<li>pid = fork()会返回多个值，只需在fork()后使用多个判断语句即可。<br>pid&lt;0表示错误，打印error之后退出<br>pid=0表示子进程运行，使用execl替换进程，替换为我们想要的进程，如cmd.o。<br>pid&gt;0表示父进程运行，使用wait(NULL)函数等待所有子进程的退出。 </li>
+</ul>
+</li>
+<li><p><strong>实验二</strong></p>
+<ul>
+<li>使用7个信号量：<br>Mutex = sem_open(“Mutex”, O_CREAT, 0666, 1);<br>send1 = sem_open(“send1”, O_CREAT, 0666, 1);<br>send2 = sem_open(“send2”, O_CREAT, 0666, 1);<br>send3 = sem_open(“send3”, O_CREAT, 0666, 1);<br>receive1 = sem_open(“receive1”, O_CREAT, 0666, 0);<br>receive2 = sem_open(“receive2”, O_CREAT, 0666, 0);<br>receive3 = sem_open(“receive3”, O_CREAT, 0666, 0);</li>
+<li>建立无名管道：<br>int fd[2];<br>int ret = pipe(fd);//无名管道</li>
+<li>先fork三个子进程，编写各自的操作</li>
+<li>每个子进程等待各自的send信号量，再等待Mutex信号量，进行，完成后释放各自的receiver：<br>P(send)<br>P(Mutex)<br>——发送内容到管道<br>V(receiver)<br>V(Mutex)</li>
+<li>父进程等待三个receiver信号量，接收管道内容后，释放三个send信号量：<br>P(receiver1)<br>P(receiver2)<br>P(receiver3)<br>P(Mutex)<br>——发送内容到管道<br>V(receiver1)<br>V(receiver2)<br>V(receiver3)<br>V(Mutex)</li>
+</ul>
+</li>
+<li><p><strong>实验三</strong></p>
+<ul>
+<li><p>四个信号量：<br>sem_send = sem_open(“send”, O_CREAT, 0666, 1);<br>sem_receive = sem_open(“receive”, O_CREAT, 0666, 0);<br>sem_over1 = sem_open(“over1”, O_CREAT, 0666, 0);<br>sem_over2 = sem_open(“over2”, O_CREAT, 0666, 0);</p>
+</li>
+<li><p>整体思路：</p>
+<p>发送：（以sender1为例）<br>While(1)<br>{<br>P(send)<br>发送消息给接收消息队列<br>if(发送的是”exit”)<br>Break;<br>P(receive)<br>}<br>P(over1)<br>发送退出消息<br>V(send)<br>退出<br>接收：<br>Int flag1 = 0;<br>Int flag2 = 0;<br>While(1)<br>{<br>P(receive)<br>发送消息给接收消息队列<br>if(接收到的是1发来的”exit”)<br>Flag1 = 1<br>V(over1)<br>if(接收到的是2发来的”exit”)<br>Falg2 = 1<br>V(over2)<br>P(send)</p>
+<p>If(flag1 &amp;&amp; flag2)<br>Break;<br>}<br>退出</p>
+</li>
+</ul>
+</li>
+<li><p><strong>实验四</strong></p>
+<ul>
+<li><p>共享内存中放的是字符串<br>支持不断地发送，不断地接收（加接收延时即可）<br>在发送消息中，第一位表示是哪个发送者发送的，以此区分发送者。</p>
+</li>
+<li><p>sem_send = sem_open(“send”, O_CREAT, 0666, 2);<br>sem_receive = sem_open(“receive”, O_CREAT, 0666, 0);<br>sem_over1 = sem_open(“over1”, O_CREAT, 0666, 0);<br>sem_over2 = sem_open(“over2”, O_CREAT, 0666, 0);</p>
+</li>
+<li><p>整体思路：</p>
+<p>发送：<br>While(1)<br>P(send)<br>发送信息<br>V(receive)<br>P(over1)<br>显示传回信息<br>V(send)</p>
+<p>接收：<br>Int flag1 = 0;<br>Int flag2 = 0;<br>While(1)<br>P(receive)<br>If(是sender1发送的)<br>If(发送的是“exit”)<br>Flag1 = 1<br>V(over1)<br>If(是sender2发送的)<br>If(发送的是“exit”)<br>Falg2 = 1<br>V(over2)</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="实验原理"><a href="#实验原理" class="headerlink" title="#实验原理"></a>#实验原理</h3><ol>
+<li><p>Posix信号量</p>
+<p>POSIX信号量有两种：<strong>有名信号量</strong>和<strong>无名信号量</strong>，无名信号量也被称作基于内存的信号量。有名信号量通过IPC名字进行进程间的同步，而无名信号量如果不是放在进程间的共享内存区中，是不能用来进行进程间同步的，只能用来进行线程同步。</p>
+<p>具体函数接口如图： </p>
+<p><img src="/2020-12-15-HDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E4%B8%89/Hexo\source_posts\HDU操作系统实验三\1.png"></p>
+<ul>
+<li><p>有名信号量的创建与删除</p>
+<p>查看源码定义：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">sem_t</span> *<span class="title">sem_open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *name, <span class="keyword">int</span> oflag)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">sem_t</span> *<span class="title">sem_open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *name, <span class="keyword">int</span> oflag,</span></span></span><br><span class="line"><span class="function"><span class="params">                  <span class="keyword">mode_t</span> mode, <span class="keyword">unsigned</span> <span class="keyword">int</span> value)</span></span>;</span><br><span class="line">                              <span class="comment">//成功返回信号量指针，失败返回SEM_FAILED</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="二、实验思路"><a href="#二、实验思路" class="headerlink" title="二、实验思路"></a>二、实验思路</h3><p>1.第一个的整体思路是遍历各线程，通过用户地址标识符将内核线程和用户线程分开，通过pid进程描述符输出即可。</p>
-<p>2.第二个实验要求需要在加载模块时提供对应pid传入参数，父进程和子进程直接遍历即可，兄弟进程稍微复杂些，需返回父进程的子进程的链表头字段，然后逐个遍历（排除传入pid的进程）。</p>
+<p>sem_open用于创建或打开一个信号量，信号量是通过name参数即信号量的名字来进行标识。</p>
+<p>oflag参数可以为：0，O_CREAT，O_EXCL。如果为0表示打开一个已存在的信号量，如果为O_CREAT，表示如果信号量不存在就创建一个信号量，如果存在则打开被返回。此时mode和value需要指定。如果为O_CREAT | O_EXCL，表示如果信号量已存在会返回错误。</p>
+<p>mode参数用于创建信号量时，表示信号量的权限位，和open函数一样包括：S_IRUSR，S_IWUSR，S_IRGRP，S_IWGRP，S_IROTH，S_IWOTH。</p>
+<p>value表示创建信号量时，信号量的初始值。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_close</span><span class="params">(<span class="keyword">sem_t</span> *sem)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_unlink</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *name)</span></span>;</span><br><span class="line">                              <span class="comment">//成功返回0，失败返回-1</span></span><br></pre></td></tr></table></figure>
+
+<p>sem_close用于关闭打开的信号量。当一个进程终止时，内核对其上仍然打开的所有有名信号量自动执行这个操作。调用sem_close关闭信号量并没有把它从系统中删除它，POSIX有名信号量是随内核持续的。即使当前没有进程打开某个信号量它的值依然保持。直到内核重新自举或调用sem_unlink()删除该信号量。</p>
+<p>sem_unlink用于将有名信号量立刻从系统中删除，但信号量的销毁是在所有进程都关闭信号量的时候。</p>
+</li>
+<li><p>信号量的P操作</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_wait</span> <span class="params">(<span class="keyword">sem_t</span> *sem)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_trywait</span> <span class="params">(<span class="keyword">sem_t</span> * sem)</span></span>;</span><br><span class="line">                              <span class="comment">//成功返回0，失败返回-1</span></span><br></pre></td></tr></table></figure>
+
+<p>sem_wait() 用于获取信号量，首先会测试指定信号量的值，如果大于 0 ，就会将它<strong>减 1</strong> 并立即返回，如果等于 0 ，那么调用线程会进入睡眠，指定信号量的值大于 0.<br>sem_trywait和sem_wait的差别是，当信号量的值等于0的，调用线程不会阻塞，直接返回，并标识EAGAIN错误。</p>
+</li>
+<li><p>信号量的V操作</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_post</span><span class="params">(<span class="keyword">sem_t</span> *sem)</span></span>;</span><br><span class="line">                            <span class="comment">//成功返回0，失败返回-1</span></span><br></pre></td></tr></table></figure>
+
+<p>当一个线程使用完某个信号量后，调用sem_post，使该信号量的值<strong>加1</strong>，如果有等待的线程，那么会唤醒等待的一个线程。</p>
+</li>
+<li><p>获取当前信号量的值</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_getvalue</span><span class="params">(<span class="keyword">sem_t</span> *sem,  <span class="keyword">int</span> *sval)</span></span>;</span><br><span class="line">                            <span class="comment">//成功返回0，失败返回-1</span></span><br></pre></td></tr></table></figure>
+
+<p>该函数返回当前信号量的值，通过sval输出参数返回，如果当前信号量已经上锁（即同步对象不可用），那么返回值为0，或为负数，其绝对值就是等待该信号量解锁的线程数。</p>
+</li>
+<li><p>无名信号量的创建和销毁</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;semaphore.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_init</span><span class="params">(<span class="keyword">sem_t</span> *sem, <span class="keyword">int</span> pshared, <span class="keyword">unsigned</span> <span class="keyword">int</span> value)</span></span>;</span><br><span class="line">                            <span class="comment">//若出错则返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sem_destroy</span><span class="params">(<span class="keyword">sem_t</span> *sem)</span></span>;</span><br><span class="line">                            <span class="comment">//成功返回0，失败返回-1</span></span><br></pre></td></tr></table></figure>
+
+<p>sem_init()用于无名信号量的初始化。无名信号量在初始化前一定要在内存中分配一个sem_t信号量类型的对象，这就是无名信号量又称为基于内存的信号量的原因。</p>
+<p>sem_init()第一个参数是指向一个已经分配的sem_t变量。第二个参数pshared表示该信号量是否由于进程间通步，当pshared = 0，那么表示该信号量只能用于进程内部的线程间的同步。当pshared != 0，表示该信号量存放在共享内存区中，使使用它的进程能够访问该共享内存区进行进程同步。第三个参数value表示信号量的初始值。</p>
+<p> 使用完一个无名信号量后，调用sem_destroy摧毁它。 </p>
+</li>
+<li><p>有名和无名信号量的持续性</p>
+<p><strong>有名信号量是随内核持续的</strong>。当有名信号量创建后，即使当前没有进程打开某个信号量它的值依然保持。直到内核重新自举或调用sem_unlink()删除该信号量。</p>
+<p>无名信号量的持续性要根据信号量在内存中的位置：</p>
+<ul>
+<li>如果无名信号量是在*<strong>*单个进程内部的数据空间**</strong>中，即信号量只能在进程内部的各个线程间共享，那么信号量是<strong>随进程的持续性</strong>，当进程终止时它也就消失了。</li>
+<li>如果无名信号量位于*<strong>*不同进程的共享内存区**</strong>，因此只要该共享内存区仍然存在，该信号量就会一直存在。所以此时无名信号量是<strong>随内核的持续性</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>IPC信号量</p>
+<p>1）IPC信号量数据结构</p>
+</li>
+</ol>
+<ul>
+<li>sem结构</li>
+</ul>
+<p>   2）IPC信号量相关系统调用</p>
+<ul>
+<li><p><strong>创建/返回信号量</strong></p>
+   <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">semget</span><span class="params">(<span class="keyword">key_t</span> key, <span class="keyword">int</span> nsems, <span class="keyword">int</span> flag)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>成功</strong>：返回信号量集的IPC标识符。 </p>
+<p>   <strong>失败</strong>：返回-1；</p>
+<p>   参数说明：<br>   第一个参数:在本地系统中表示要创建或访问信号量的ID值，IPC_PRIVATE表示创建一个新的信号量；<br>   第二个参数 nsems：表示该集合中的信号量。大于等于0；表示由可用资源数。<br>   如果是创建新的信号量(一般是在服务器中进行)，则必须指定nsems。如果引用一个现存的集合（一个客户进程），则将nsems指定为0；<br>   第三个参数flag：指定选项和权限位的标志。IPC_CREAT和IPC_EXEL；</p>
+<ul>
+<li><p><strong>操作信号量</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">semop</span><span class="params">(<span class="keyword">int</span> semid, struct sembuf semoparray[], <span class="keyword">size_t</span> nops)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>成功</strong>：返回0；</p>
+<p><strong>失败</strong>：返回-1；</p>
+<p>参数说明：<br>semid:通过semget（）函数返回的一个信号量集标识符ID;<br>nops：标明参数semoparray所指向数组中的元素个数。<br>semoparray是一个结构数组指针。结构体struct sembuf用来说明要执行的操作。<br>struct sembuf{</p>
+<pre><code> unsigned short sem_num;           //对应信号量集中的某个资源
+ short sem_op;                     //指明所要执行的操作
+ short sem_flg;                    //函数semop的行为
+ &#125;</code></pre>
+<p>sem_op的值是一个整数:</p>
+<p>（1）sem_op  &gt;  0 :释放相应的资源数，如果有两个信号量，释放信号量1，则其semval+1，对信号量这个无名结构体的操作，通过semctl函数来实现。<br>（2）sem_op == 0:进程阻塞直到信号量的相应值为0，档信号量已经为0，函数立即返回。<br>（3）sem_op  &lt;  0:请求sem_op的绝对值的资源数。<br>sem_flag:<br>该参数可以设置成为IPC_NOWAIT和SEM_UNDO两种状态。</p>
+<pre><code>IPC_NOWAIT:对信号的操作不能满足时，semop()不会阻塞，并立即返回，同事设定错误信息。
+IPC_UNDO:程序结束时释放信号量，这样做可以避免程序在异常情况下结束时未将锁定的资源解锁，造成该资源永远锁定。 </code></pre>
+</li>
+<li><p><strong>控制信号量集</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int semctl(int sem_id, int semnum, int cmd, union semun arg);</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<pre><code>sem_id:信号量集标识符；
+semnum:指定信号量集中某一个信号灯成员，其值在（0~nsems-1）；
+cmd：定义了函数要进行的操作；</code></pre>
+<p>cmd的常用值：<br>IPC_STAT:对此集合区semid_ds结构，并不存放在arg.buf之中。<br>GETVAL:返回结构体数组中以semnum为下标的元素的成员semval值。<br>SETVAL：使用arg.val对该信号量的semnum.sempid赋值</p>
+<p>第四个参数是可选的，但是其很重要不能忽略，它的类型是semun，它是多个特定命令的联合(union):<br>union semun {</p>
+<pre><code>int  val;    //val的值为cmd命令的SETVAL所用；
+struct semid_ds   *duf;   
+unsigned short    *array;</code></pre>
+<p>}</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li></li>
+</ol>
 ]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>HDU</tag>
-        <tag>操作系统</tag>
-      </tags>
   </entry>
   <entry>
     <title>生活随笔</title>
